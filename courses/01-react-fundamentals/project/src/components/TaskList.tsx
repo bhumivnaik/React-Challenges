@@ -1,3 +1,5 @@
+import TaskCard from "./TaskCard";
+
 export interface Task {
   id: string | number
   title: string
@@ -17,6 +19,21 @@ interface TaskListProps {
   linkToTaskDetail?: boolean
 }
 
-export default function TaskList(_props: TaskListProps) {
-  return <section id="task-list" />
+export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
+  return (
+    <section id="task-list">
+      <h3 id="task-count">{countText}</h3>
+      {
+        tasks?.map((task) => (
+          <TaskCard key={task.id}
+            title={task.title}
+            id={task.id}
+            description={task.description}
+            priority={task.priority}
+            completed={task.completed}
+            onToggle={onToggle ? () => onToggle(task.id) : undefined}
+            onDelete={onDelete} />
+        ))
+      }
+    </section>)
 }
