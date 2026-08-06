@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-08-05T12:14:20.784Z",
+  "lastUpdated": "2026-08-06T11:40:36.541Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 29.9,
-    "completionPercentage": 9.4,
+    "overallScore": 29.7,
+    "completionPercentage": 18.9,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 5
+    "completedChallenges": 10
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 90.7,
-      "completionPercentage": 21.7,
+      "averageScore": 89.9,
+      "completionPercentage": 43.5,
       "badgeLevel": "none",
       "totalChallenges": 23,
-      "completedChallenges": 5,
+      "completedChallenges": 10,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
@@ -92,6 +92,81 @@
             "bestPractices": 100,
             "e2eTests": 100,
             "aiReview": 88
+          }
+        },
+        "06-task-filtering": {
+          "challengeId": "06-task-filtering",
+          "challengeName": "Task Filtering",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-08-05T19:24:49.642Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "07-priority-based-sorting": {
+          "challengeId": "07-priority-based-sorting",
+          "challengeName": "Priority-Based Sorting",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-08-05T20:13:36.536Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "08-task-editing": {
+          "challengeId": "08-task-editing",
+          "challengeName": "Task Editing",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-08-06T07:40:39.099Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "09-search-functionality": {
+          "challengeId": "09-search-functionality",
+          "challengeName": "Search Functionality",
+          "passed": true,
+          "score": 83.2,
+          "lastRun": "2026-08-06T10:15:08.404Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 50,
+            "aiReview": 88
+          }
+        },
+        "10-useeffect-local-storage": {
+          "challengeId": "10-useeffect-local-storage",
+          "challengeName": "useEffect - Local Storage Persistence",
+          "passed": true,
+          "score": 89.95,
+          "lastRun": "2026-08-06T11:39:50.009Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 83
           }
         }
       }

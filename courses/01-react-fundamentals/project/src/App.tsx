@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ChallengeList from './components/ChallengeList'
 import TaskList from './components/TaskList'
@@ -18,13 +18,29 @@ const INITIAL_TASKS: Task[] = [
 ]
 
 function AppContent() {
-  const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS)
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    try {
+      const data = localStorage.getItem("task-app-tasks");
+      if (data) {
+        return JSON.parse(data) as Task[];
+      }
+      return INITIAL_TASKS;
+    } catch (e) {
+      console.error("Failed to load tasks:", e);
+      return INITIAL_TASKS;
+    }
+  });
+
+
 
   const handleDelete = (id: string | number) => {
     if (window.confirm('Are you sure?')) {
       setTasks((prev) => prev.filter((t) => t.id !== id))
     }
   }
+  useEffect(() =>
+    localStorage.setItem("task-app-tasks", JSON.stringify(tasks))
+    , [tasks]);
 
   return (
     <BrowserRouter>

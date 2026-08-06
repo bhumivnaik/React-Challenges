@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Task } from "./TaskList";
 
 interface TaskFormProps {
   onAddTask?: (task: Task) => void
+  onUpdateTask?: (task: Task) => void
+  editingTask?: Task | null;
+  clearEditing?: () => void
 }
 
-export default function TaskForm({ onAddTask }: TaskFormProps) {
+export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEditing }: TaskFormProps) {
+  useEffect(() => {
+    if (editingTask) {
+      setNewTask(editingTask);
+      setMsg("");
+    }
+  }, [editingTask]);
+
   const [newTask, setNewTask] = useState<Task>({
     id: Date.now(),
     title: "",
@@ -27,7 +37,7 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
       setMsg("Title is Required");
       return;
     }
-    else {
+    if (!editingTask) {
       onAddTask?.(newTask);
       setNewTask({
         id: Date.now(),
@@ -38,22 +48,54 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
       });
       setMsg("");
     }
+    else {
+      onUpdateTask?.(newTask);
+      setNewTask({
+        id: Date.now(),
+        title: "",
+        description: "",
+        priority: "Low",
+        completed: false
+      });
+      setMsg("");
+      clearEditing?.();
+    }
   }
 
   return (
     <>
       <form onSubmit={handleSubmit} id="task-form">
-        <h2>Add New Task</h2>
-        <label htmlFor="task-title">Title:</label><input type="text" name="title" value={newTask.title} onChange={handleChange} id="task-title" /><br /><br />
-        <label htmlFor="task-desc">Description:</label> <input type="text" name="description" value={newTask.description} onChange={handleChange} id="task-desc" /><br /><br />
-        <label htmlFor="task-prior">Priority:</label> <select name="priority" value={newTask.priority} onChange={handleChange} id="task-prior">
+
+
+        <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
+        <label htmlFor="task-title">Title:</label>
+        <input type="text" name="title" value={newTask.title} onChange={handleChange} id="task-title" /><br /><br />
+
+        <label htmlFor="task-desc">Description:</label>
+        <input type="text" name="description" value={newTask.description} onChange={handleChange} id="task-desc" /><br /><br />
+
+        <label htmlFor="task-prior">Priority:</label>
+        <select name="priority" value={newTask.priority} onChange={handleChange} id="task-prior">
           <option value="High">High</option>
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
         </select><br /><br />
         <p id="task-form-error">{msg}</p><br />
-        <button type="submit" >Add Task</button>
-      </form>
+        <div style={{ display: "flex", gap: 20 }}>
+          <button type="submit" >{editingTask ? "Edit Task" : "Add New Task"}</button>
+          <button type="button" onClick={() => {
+            clearEditing?.();
+            setNewTask({
+              id: Date.now(),
+              title: "",
+              description: "",
+              priority: "Low",
+              completed: false,
+            });
+            setMsg("");
+          }}>Cancel</button>
+        </div>
+      </form >
     </>
   );
 }

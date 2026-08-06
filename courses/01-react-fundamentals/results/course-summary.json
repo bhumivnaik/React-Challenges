@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-08-05T12:14:19.339Z",
+  "lastUpdated": "2026-08-06T11:40:34.560Z",
   "totalChallenges": 23,
-  "completedChallenges": 5,
-  "averageScore": 90.7,
-  "completionPercentage": 21.7,
+  "completedChallenges": 10,
+  "averageScore": 89.9,
+  "completionPercentage": 43.5,
   "badgeLevel": "none",
   "challengeResults": [
     {
@@ -37,6 +37,36 @@
       "challengeName": "Task Deletion",
       "score": 90.7,
       "passed": true
+    },
+    {
+      "challengeId": "06-task-filtering",
+      "challengeName": "Task Filtering",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "07-priority-based-sorting",
+      "challengeName": "Priority-Based Sorting",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "08-task-editing",
+      "challengeName": "Task Editing",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "09-search-functionality",
+      "challengeName": "Search Functionality",
+      "score": 83.2,
+      "passed": true
+    },
+    {
+      "challengeId": "10-useeffect-local-storage",
+      "challengeName": "useEffect - Local Storage Persistence",
+      "score": 89.95,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -44,7 +74,12 @@
     "Dynamic Task Rendering",
     "Adding New Tasks",
     "Task Completion Toggle",
-    "Task Deletion"
+    "Task Deletion",
+    "Task Filtering",
+    "Priority-Based Sorting",
+    "Task Editing",
+    "Search Functionality",
+    "useEffect - Local Storage Persistence"
   ],
   "improvementAreas": []
 }

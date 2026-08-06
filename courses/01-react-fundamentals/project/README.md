@@ -68,12 +68,12 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 5/8/2026, 5:44:19 pm*
+*Auto-updated when you run review. Last run: 6/8/2026, 5:10:34 pm*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 5 / 23 (21.7%) |
-| Average score | 90.7% |
+| Challenges completed | 10 / 23 (43.5%) |
+| Average score | 89.9% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -82,11 +82,11 @@ npm run review -- --challenge=01-static-task-display
 | Adding New Tasks | Controlled inputs, Event handlers, Form validation, Form handling, Immutable state | Passed |
 | Task Completion Toggle | Updating array state, Event handlers with params, Conditional styling | Passed |
 | Task Deletion | filter, Immutable state, Confirmation patterns, Prop functions with arguments | Passed |
-| Task Filtering | Derived state, Conditional rendering, Filter logic composition | — |
-| Priority-Based Sorting | Array sort, Sort stability, Multiple sort criteria, Select dropdowns | — |
-| Task Editing | Inline editing, Conditional rendering, Edit mode state, Controlled inputs, Form handling, State synchronization | — |
-| Search Functionality | Text search, Combining filters, String methods, Search UI patterns | — |
-| useEffect - Local Storage Persistence | useEffect, Side effects, localStorage, JSON serialization, Effect dependencies | — |
+| Task Filtering | Derived state, Conditional rendering, Filter logic composition | Passed |
+| Priority-Based Sorting | Array sort, Sort stability, Multiple sort criteria, Select dropdowns | Passed |
+| Task Editing | Inline editing, Conditional rendering, Edit mode state, Controlled inputs, Form handling, State synchronization | Passed |
+| Search Functionality | Text search, Combining filters, String methods, Search UI patterns | Passed |
+| useEffect - Local Storage Persistence | useEffect, Side effects, localStorage, JSON serialization, Effect dependencies | Passed |
 | useEffect - Debounced Search | useEffect cleanup, setTimeout, Debouncing, Memory leak prevention | — |
 | Categories and Tags | Complex state, Array fields, Multi-select/tags input, Nested data, Filtering by array membership | — |
 | Due Dates and Sorting | Date handling, Date objects and formatting, Date comparison, Overdue detection | — |

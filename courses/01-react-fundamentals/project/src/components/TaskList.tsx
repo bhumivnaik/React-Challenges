@@ -16,10 +16,11 @@ interface TaskListProps {
   countText?: string
   onToggle?: (id: string | number) => void
   onDelete?: (id: string | number) => void
+  onEdit?: (task: Task) => void
   linkToTaskDetail?: boolean
 }
 
-export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskListProps) {
+export default function TaskList({ tasks, countText, onToggle, onDelete, onEdit }: TaskListProps) {
   return (
     <section id="task-list">
       <h3 id="task-count">{countText}</h3>
@@ -32,8 +33,14 @@ export default function TaskList({ tasks, countText, onToggle, onDelete }: TaskL
             priority={task.priority}
             completed={task.completed}
             onToggle={onToggle ? () => onToggle(task.id) : undefined}
-            onDelete={onDelete} />
+            onDelete={onDelete}
+            onEdit={onEdit} />
         ))
       }
+      {tasks?.length === 0 && (
+        <p id="filter-empty-message">
+          No tasks match this filter
+        </p>
+      )}
     </section>)
 }
