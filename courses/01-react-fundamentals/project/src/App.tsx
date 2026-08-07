@@ -10,11 +10,11 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import type { Task } from './components/TaskList'
 
 const INITIAL_TASKS: Task[] = [
-  { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false },
-  { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false },
-  { id: 3, title: 'Third Task', description: 'Description three', priority: 'Low', completed: false },
-  { id: 4, title: 'Fourth Task', description: 'Description four', priority: 'Medium', completed: false },
-  { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false },
+  { id: 1, title: 'First Task', description: 'Description one', priority: 'High', completed: false, category: "General" },
+  { id: 2, title: 'Second Task', description: 'Description two', priority: 'Medium', completed: false, category: "General" },
+  { id: 3, title: 'Third Task', description: 'Description three', priority: 'Low', completed: false, category: "General" },
+  { id: 4, title: 'Fourth Task', description: 'Description four', priority: 'Medium', completed: false, category: "General" },
+  { id: 5, title: 'Fifth Task', description: 'Description five', priority: 'High', completed: false, category: "General" },
 ]
 
 function AppContent() {
@@ -22,12 +22,21 @@ function AppContent() {
     try {
       const data = localStorage.getItem("task-app-tasks");
       if (data) {
-        return JSON.parse(data) as Task[];
+        const response = JSON.parse(data) as Task[];
+        return response.map((task) => ({
+          ...task,
+          category: task.category ?? "General",
+          tags: task.tags ?? [],
+        }));
       }
       return INITIAL_TASKS;
     } catch (e) {
       console.error("Failed to load tasks:", e);
-      return INITIAL_TASKS;
+      return INITIAL_TASKS.map((task) => ({
+        ...task,
+        category: task.category ?? "General",
+        tags: task.tags ?? [],
+      }));
     }
   });
 

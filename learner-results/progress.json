@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-08-06T11:40:36.541Z",
+  "lastUpdated": "2026-08-07T10:31:25.606Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
     "overallScore": 29.7,
-    "completionPercentage": 18.9,
+    "completionPercentage": 24.5,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 10
+    "completedChallenges": 13
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 89.9,
-      "completionPercentage": 43.5,
-      "badgeLevel": "none",
+      "averageScore": 90.1,
+      "completionPercentage": 56.5,
+      "badgeLevel": "bronze",
       "totalChallenges": 23,
-      "completedChallenges": 10,
+      "completedChallenges": 13,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
@@ -167,6 +167,51 @@
             "bestPractices": 100,
             "e2eTests": 100,
             "aiReview": 83
+          }
+        },
+        "11-useeffect-debounced-search": {
+          "challengeId": "11-useeffect-debounced-search",
+          "challengeName": "useEffect - Debounced Search",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-08-06T12:46:47.568Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "12-categories-and-tags": {
+          "challengeId": "12-categories-and-tags",
+          "challengeName": "Categories and Tags",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-08-07T09:12:34.784Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "13-due-dates-and-sorting": {
+          "challengeId": "13-due-dates-and-sorting",
+          "challengeName": "Due Dates and Sorting",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-08-07T10:31:02.109Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 50,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 88
           }
         }
       }

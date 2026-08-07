@@ -12,27 +12,40 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
   useEffect(() => {
     if (editingTask) {
       setNewTask(editingTask);
+      setTagInput(editingTask.tags?.join(", ") ?? "");
       setMsg("");
     }
   }, [editingTask]);
 
+  const [tagInput, setTagInput] = useState("");
   const [newTask, setNewTask] = useState<Task>({
     id: Date.now(),
     title: "",
     description: "",
     priority: "Low",
-    completed: false
+    completed: false,
+    category: "General",
+    tags: [],
+    dueDate: ""
   });
 
   const [msg, setMsg] = useState<string>("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    setNewTask((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target.name === "tags") {
+      const value = e.target.value;
+      setTagInput(value);
+      const arrtags = value.split(",").map(tag => tag.trim());
+      const finaltags = arrtags.filter((tag) => tag !== "");
+      setNewTask((prev) => ({ ...prev, [e.target.name]: finaltags }));
+    } else {
+      setNewTask((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
+    console.log(newTask);
     if (newTask.title === "") {
       setMsg("Title is Required");
       return;
@@ -44,9 +57,13 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
         title: "",
         description: "",
         priority: "Low",
-        completed: false
+        completed: false,
+        category: "General",
+        tags: [],
+        dueDate: ""
       });
       setMsg("");
+      setTagInput("");
     }
     else {
       onUpdateTask?.(newTask);
@@ -55,10 +72,14 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
         title: "",
         description: "",
         priority: "Low",
-        completed: false
+        completed: false,
+        category: "General",
+        tags: [],
+        dueDate: undefined
       });
       setMsg("");
       clearEditing?.();
+      setTagInput("");
     }
   }
 
@@ -80,6 +101,29 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
         </select><br /><br />
+
+        <label htmlFor="task-categ">Category:</label>
+        <select name="category" value={newTask.category} onChange={handleChange} id="task-categ">
+          <option value="General">General</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          {/* <option value="Other">Other</option> */}
+        </select><br /><br />
+        {/* {
+          newTask.category === "Other" ? (<>
+            <label htmlFor="task-newcat">New Category</label>
+            <input type="text" name="category" value="" onChange={handleChange} id="task-newcat" /><br /><br />
+          </>) : null
+        } */}
+
+        <label htmlFor="task-tags">Tags:(comma separated)</label>
+        <input type="text" name="tags" value={tagInput} onChange={handleChange} id="task-tags" /><br /><br />
+
+        <label htmlFor="date">Date</label>
+        <input type="date" id="date" name="dueDate"
+          value={newTask.dueDate ?? ""}
+          onChange={handleChange} /> <br />
+
         <p id="task-form-error">{msg}</p><br />
         <div style={{ display: "flex", gap: 20 }}>
           <button type="submit" >{editingTask ? "Edit Task" : "Add New Task"}</button>
@@ -91,6 +135,8 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
               description: "",
               priority: "Low",
               completed: false,
+              category: "General",
+              tags: []
             });
             setMsg("");
           }}>Cancel</button>
