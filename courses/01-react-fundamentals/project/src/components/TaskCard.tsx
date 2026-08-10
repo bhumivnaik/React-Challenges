@@ -1,4 +1,9 @@
 import type { Task } from "./TaskList"
+import Button from "./Button"
+import Badge from "./Badge"
+import StatusIndicator from "./StatusIndicator"
+import React from "react"
+import { useNavigate, Link } from "react-router-dom";
 
 interface TaskCardProps {
   title: string
@@ -14,7 +19,8 @@ interface TaskCardProps {
   onEdit?: (task: Task) => void
 }
 
-export default function TaskCard({ title, description, priority, completed, category, tags, onToggle, onDelete, id, onEdit, dueDate }: TaskCardProps) {
+function TaskCard({ title, description, priority, completed, category, tags, onToggle, onDelete, id, onEdit, dueDate }: TaskCardProps) {
+  const navigate = useNavigate();
   const task: Task = {
     id,
     title,
@@ -42,8 +48,8 @@ export default function TaskCard({ title, description, priority, completed, cate
       <div>
         <h2 style={{ textDecoration: completed ? "line-through" : "none" }}>{title} </h2>
         <p style={{ textDecoration: completed ? "line-through" : "none" }}>{description}</p>
-        <p>Priority: {priority}</p>
-        <p>Category: {category}</p>
+        <Badge variant="priority">Priority: {priority}</Badge>
+        <Badge variant="priority">Category: {category}</Badge>
         <div id="tasks-tags">
           {tags?.map((tag, index) => (
             <span style={{ marginRight: "8px" }} key={index} data-tag>{tag.trim()}</span>
@@ -52,24 +58,33 @@ export default function TaskCard({ title, description, priority, completed, cate
         <p id="task-due-date">Due Date: {dueDate ? new Date(dueDate).toLocaleDateString() : "No due date"}</p>
         {!completed && due && diffDays !== null && (
           diffDays < 0 ? (
-            <p data-overdue="true">Overdue</p>
+            <StatusIndicator status="overdue" />
+            // <p data-overdue="true">Overdue</p>
           ) : diffDays === 0 ? (
-            <p>Due Today</p>
+            <StatusIndicator status="due-today" />
           ) : diffDays <= 3 ? (
-            <p>Due Soon</p>
+            <StatusIndicator status="due-soon" />
           ) : null
         )}
       </div>
       <div>
-        {onDelete && (<button type="button" onClick={() => {
+        {onDelete && (<Button type="button" onClick={() => {
           if (window.confirm("Are you sure?")) {
             onDelete?.(id);
           }
-        }}>Delete</button>)}
+        }}>Delete</Button>)}
 
-        <button type="button" onClick={() => onEdit?.(task)}>Edit</button>
+        <Button type="button" onClick={() => onEdit?.(task)}>Edit</Button>
+        {/* <Button type="button" onClick={() => navigate(`/challenge/21-react-router/task/${task.id}`)}>Details</Button> */}
+
+        <Link to={`/challenge/21-react-router/task/${task.id}`}>
+          <Button type="button">Details</Button>
+        </Link>
+
 
       </div>
     </article>
   )
 }
+
+export default React.memo(TaskCard);

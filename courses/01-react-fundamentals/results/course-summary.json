@@ -1,12 +1,12 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-08-07T10:31:24.609Z",
+  "lastUpdated": "2026-08-10T13:57:05.488Z",
   "totalChallenges": 23,
-  "completedChallenges": 13,
-  "averageScore": 90.1,
-  "completionPercentage": 56.5,
-  "badgeLevel": "bronze",
+  "completedChallenges": 21,
+  "averageScore": 87.9,
+  "completionPercentage": 91.3,
+  "badgeLevel": "silver",
   "challengeResults": [
     {
       "challengeId": "01-static-task-display",
@@ -85,6 +85,60 @@
       "challengeName": "Due Dates and Sorting",
       "score": 90.7,
       "passed": true
+    },
+    {
+      "challengeId": "14-task-statistics-dashboard",
+      "challengeName": "Task Statistics Dashboard",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "15-component-organization",
+      "challengeName": "Component Organization with Props",
+      "score": 89.95,
+      "passed": true
+    },
+    {
+      "challengeId": "16-context-api-theme",
+      "challengeName": "Context API - Theme Management",
+      "score": 89.95,
+      "passed": true
+    },
+    {
+      "challengeId": "17-custom-hook-uselocalstorage",
+      "challengeName": "Custom Hook - useLocalStorage",
+      "score": 89.95,
+      "passed": true
+    },
+    {
+      "challengeId": "18-usereducer-complex-state",
+      "challengeName": "useReducer - Complex State Management",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "19-performance-optimization",
+      "challengeName": "Performance Optimization",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "20-error-boundaries",
+      "challengeName": "Error Boundaries and Error Handling",
+      "score": 90.7,
+      "passed": true
+    },
+    {
+      "challengeId": "21-react-router",
+      "challengeName": "React Router - Routing and Navigation",
+      "score": 89.95,
+      "passed": true
+    },
+    {
+      "challengeId": "22-data-fetching",
+      "challengeName": "Data Fetching - Loading and Error State",
+      "score": 39.95,
+      "passed": false
     }
   ],
   "skillStrengths": [
@@ -100,7 +154,17 @@
     "useEffect - Local Storage Persistence",
     "useEffect - Debounced Search",
     "Categories and Tags",
-    "Due Dates and Sorting"
+    "Due Dates and Sorting",
+    "Task Statistics Dashboard",
+    "Component Organization with Props",
+    "Context API - Theme Management",
+    "Custom Hook - useLocalStorage",
+    "useReducer - Complex State Management",
+    "Performance Optimization",
+    "Error Boundaries and Error Handling",
+    "React Router - Routing and Navigation"
   ],
-  "improvementAreas": []
+  "improvementAreas": [
+    "Data Fetching - Loading and Error State"
+  ]
 }

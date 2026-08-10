@@ -6,6 +6,9 @@ test.describe('Challenge 20: Error Boundaries - E2E', () => {
   });
 
   test('should display task list or main content', async ({ page }) => {
+    console.log('URL:', page.url());
+    console.log('HTML:', await page.locator('body').innerHTML());
+
     const taskList = page.locator('#task-list');
     const main = page.locator('main');
     await expect(taskList.or(main)).toBeVisible();

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Task } from "./TaskList";
+import Button from "./Button";
+import FormInput from "./FormInput";
 
 interface TaskFormProps {
   onAddTask?: (task: Task) => void
@@ -89,8 +91,13 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
 
 
         <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
-        <label htmlFor="task-title">Title:</label>
-        <input type="text" name="title" value={newTask.title} onChange={handleChange} id="task-title" /><br /><br />
+        {/* <label htmlFor="task-title">Title:</label>
+        <input type="text" name="title" value={newTask.title} onChange={handleChange} id="task-title" /><br /><br /> */}
+
+
+        <FormInput label="Title" id="task-title"
+          name="title" value={newTask.title} onChange={handleChange}
+        />
 
         <label htmlFor="task-desc">Description:</label>
         <input type="text" name="description" value={newTask.description} onChange={handleChange} id="task-desc" /><br /><br />
@@ -126,8 +133,8 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
 
         <p id="task-form-error">{msg}</p><br />
         <div style={{ display: "flex", gap: 20 }}>
-          <button type="submit" >{editingTask ? "Edit Task" : "Add New Task"}</button>
-          <button type="button" onClick={() => {
+          <Button type="submit" >{editingTask ? "Edit Task" : "Add New Task"}</Button>
+          <Button type="button" onClick={() => {
             clearEditing?.();
             setNewTask({
               id: Date.now(),
@@ -139,7 +146,7 @@ export default function TaskForm({ onAddTask, onUpdateTask, editingTask, clearEd
               tags: []
             });
             setMsg("");
-          }}>Cancel</button>
+          }}>Cancel</Button>
         </div>
       </form >
     </>

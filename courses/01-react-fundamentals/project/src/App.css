@@ -15,10 +15,21 @@
   --border: #e5e7eb;
 }
 
+.App[data-theme="dark"] {
+  --bg: #121212;
+  --card: #1e1e1e;
+
+  --text: #ffffff;
+  --light: #aaaaaa;
+
+  --border: #444444;
+}
+
 .App {
   padding: 1rem;
-  color: #111;
-  background: #fff;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
 }
 
 .App code {
@@ -28,6 +39,7 @@
   font-size: 0.9em;
   color: #111;
 }
+
 
 h2,
 h3,
@@ -43,7 +55,9 @@ p {
 }
 
 #task-card {
-  border: 1px solid #ddd;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
@@ -53,8 +67,10 @@ p {
 }
 
 #task-form {
+  background: var(--card);
+  color: var(--text);
   box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1rem;
 }
@@ -80,9 +96,12 @@ button:hover {
 }
 
 input[type=text],
+input[type=date],
 select {
   width: 97%;
-  border: 1px solid #ddd;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px;
   outline: none;
