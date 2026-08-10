@@ -5435,25 +5435,25 @@
   {
     "challengeId": "21-react-router",
     "challengeName": "React Router - Routing and Navigation",
-    "timestamp": "2026-08-10T13:51:28.923Z",
+    "timestamp": "2026-08-10T14:18:20.971Z",
     "scores": {
-      "functionalTests": 100,
+      "functionalTests": 0,
       "codeQuality": 50,
       "architecture": 100,
       "bestPractices": 100,
-      "e2eTests": 100,
-      "aiReview": 83
+      "e2eTests": 33.3,
+      "aiReview": 88
     },
-    "totalScore": 89.95,
-    "passed": true,
+    "totalScore": 45.69499999999999,
+    "passed": false,
     "errors": [],
     "warnings": [],
     "testResults": {
-      "score": 100,
-      "passed": true,
+      "score": 0,
+      "passed": false,
       "totalTests": 2,
-      "passedTests": 2,
-      "failedTests": 0,
+      "passedTests": 0,
+      "failedTests": 2,
       "details": [
         {
           "assertionResults": [
@@ -5463,10 +5463,16 @@
                 "Challenge 21: React Router - Routing and Navigation"
               ],
               "fullName": " Challenge 21: React Router - Routing and Navigation TaskDetailPage should use useParams and render task detail or not found",
-              "status": "passed",
+              "status": "failed",
               "title": "TaskDetailPage should use useParams and render task detail or not found",
-              "duration": 39,
-              "failureMessages": []
+              "duration": 45,
+              "failureMessages": [
+                "Cannot read properties of undefined (reading 'title')"
+              ],
+              "location": {
+                "line": 20,
+                "column": 30
+              }
             },
             {
               "ancestorTitles": [
@@ -5474,19 +5480,26 @@
                 "Challenge 21: React Router - Routing and Navigation"
               ],
               "fullName": " Challenge 21: React Router - Routing and Navigation TaskDetailPage should have back button with id task-detail-back",
-              "status": "passed",
+              "status": "failed",
               "title": "TaskDetailPage should have back button with id task-detail-back",
-              "duration": 4,
-              "failureMessages": []
+              "duration": 6,
+              "failureMessages": [
+                "Cannot read properties of undefined (reading 'title')"
+              ],
+              "location": {
+                "line": 20,
+                "column": 30
+              }
             }
           ],
-          "startTime": 1786369896126,
-          "endTime": 1786369896170,
-          "status": "passed",
+          "startTime": 1786371507879,
+          "endTime": 1786371507930,
+          "status": "failed",
           "message": "",
           "name": "C:/Users/naikb/OneDrive/Desktop/React Challenges/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-21.test.tsx"
         }
-      ]
+      ],
+      "error": "Command failed: npx vitest run \"C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\challenge-21.test.tsx\" --reporter=json"
     },
     "lintResults": {
       "score": 50,
@@ -5555,10 +5568,10 @@
       "note": "No best practices requirements specified in challenge"
     },
     "e2eResults": {
-      "score": 100,
+      "score": 33.3,
       "passed": true,
       "totalTests": 3,
-      "passedTests": 3,
+      "passedTests": 1,
       "failedTests": 0,
       "details": [
         {
@@ -5590,12 +5603,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1960,
+                          "duration": 1969,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-10T13:51:50.840Z",
+                          "startTime": "2026-08-10T14:18:44.116Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -5623,18 +5636,67 @@
                         {
                           "workerIndex": 0,
                           "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 470,
-                          "errors": [],
+                          "status": "failed",
+                          "duration": 5426,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-detail-page')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-detail-page')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-detail-page')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-detail-page')\u001b[22m\n\n    at C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts:14:53",
+                            "location": {
+                              "file": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts",
+                              "column": 53,
+                              "line": 14
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m   test(\u001b[32m'task detail route should be reachable'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/challenge/21-react-router/task/1'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-detail-page'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m\n \u001b[90m 17 |\u001b[39m   test(\u001b[32m'back button should exist on task detail page'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts",
+                                "column": 53,
+                                "line": 14
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-detail-page')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-detail-page')\u001b[22m\n\n\n  12 |   test('task detail route should be reachable', async ({ page }) => {\n  13 |     await page.goto('/challenge/21-react-router/task/1');\n> 14 |     await expect(page.locator('#task-detail-page')).toBeVisible();\n     |                                                     ^\n  15 |   });\n  16 |\n  17 |   test('back button should exist on task detail page', async ({ page }) => {\n    at C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts:14:53"
+                            }
+                          ],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-10T13:51:53.120Z",
+                          "startTime": "2026-08-10T14:18:46.289Z",
                           "annotations": [],
-                          "attachments": []
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\test-results\\challenge-21-Challenge-21--3353d-l-route-should-be-reachable-chromium\\test-failed-1.png"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts",
+                            "column": 53,
+                            "line": 14
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 934,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-10T14:18:56.796Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\test-results\\challenge-21-Challenge-21--3353d-l-route-should-be-reachable-chromium-retry1\\trace.zip"
+                            }
+                          ]
                         }
                       ],
-                      "status": "expected"
+                      "status": "flaky"
                     }
                   ],
                   "id": "22625d08e539c53447bc-0603557c1a6fa646b519",
@@ -5655,20 +5717,69 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 0,
+                          "workerIndex": 1,
                           "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 438,
-                          "errors": [],
+                          "status": "failed",
+                          "duration": 5650,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-detail-back')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-detail-back')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-detail-back')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-detail-back')\u001b[22m\n\n    at C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts:19:53",
+                            "location": {
+                              "file": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts",
+                              "column": 53,
+                              "line": 19
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 17 |\u001b[39m   test(\u001b[32m'back button should exist on task detail page'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/challenge/21-react-router/task/1'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-detail-back'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts",
+                                "column": 53,
+                                "line": 19
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-detail-back')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-detail-back')\u001b[22m\n\n\n  17 |   test('back button should exist on task detail page', async ({ page }) => {\n  18 |     await page.goto('/challenge/21-react-router/task/1');\n> 19 |     await expect(page.locator('#task-detail-back')).toBeVisible();\n     |                                                     ^\n  20 |   });\n  21 | });\n  22 |\n    at C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts:19:53"
+                            }
+                          ],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-08-10T13:51:53.615Z",
+                          "startTime": "2026-08-10T14:18:58.093Z",
                           "annotations": [],
-                          "attachments": []
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\test-results\\challenge-21-Challenge-21--a6c00-d-exist-on-task-detail-page-chromium\\test-failed-1.png"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\tests\\e2e\\challenge-21.spec.ts",
+                            "column": 53,
+                            "line": 19
+                          }
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 954,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-08-10T14:19:08.604Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\naikb\\OneDrive\\Desktop\\React Challenges\\challenge-engine-react\\courses\\01-react-fundamentals\\project\\test-results\\challenge-21-Challenge-21--a6c00-d-exist-on-task-detail-page-chromium-retry1\\trace.zip"
+                            }
+                          ]
                         }
                       ],
-                      "status": "expected"
+                      "status": "flaky"
                     }
                   ],
                   "id": "22625d08e539c53447bc-f85ca2164f7d61a1e83d",
@@ -5685,41 +5796,41 @@
     },
     "aiReviewResults": {
       "challengeId": "21-react-router",
-      "timestamp": "2026-08-10T13:51:55.097Z",
-      "score": 83,
+      "timestamp": "2026-08-10T14:19:10.959Z",
+      "score": 88,
       "feedback": [],
       "strengths": [
         "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript and React hooks is well-implemented and easy to follow.",
-        "The code includes comments and explanations for complex logic."
+        "The use of TypeScript and React hooks is well-implemented.",
+        "The code is relatively free of errors and bugs."
       ],
       "improvements": [
-        "Some of the functions are too long and complex, making them difficult to understand. Consider breaking them down into smaller, more manageable functions.",
-        "There are some redundant checks and conditions that can be simplified or removed.",
-        "Consider adding more type annotations and interfaces to improve code readability and maintainability."
+        "Some of the functions and variables could be extracted into separate modules to improve code organization and reusability.",
+        "The use of magic numbers (e.g., 300 in the debounce function) could be replaced with named constants for better readability.",
+        "The code could benefit from more comprehensive error handling and edge case testing."
       ],
       "readability": 85,
-      "maintainability": 80,
-      "overall": "The code is well-structured and well-implemented, but there are some areas for improvement to make it more maintainable and efficient. With some refactoring and simplification, the code can be even more effective and easier to understand."
+      "maintainability": 90,
+      "overall": "The code is well-written and demonstrates a good understanding of React and TypeScript. However, there are some areas for improvement to make the code more maintainable and efficient."
     },
     "aiResults": {
       "challengeId": "21-react-router",
-      "timestamp": "2026-08-10T13:51:55.097Z",
-      "score": 83,
+      "timestamp": "2026-08-10T14:19:10.959Z",
+      "score": 88,
       "feedback": [],
       "strengths": [
         "The code is well-structured and follows a consistent naming convention.",
-        "The use of TypeScript and React hooks is well-implemented and easy to follow.",
-        "The code includes comments and explanations for complex logic."
+        "The use of TypeScript and React hooks is well-implemented.",
+        "The code is relatively free of errors and bugs."
       ],
       "improvements": [
-        "Some of the functions are too long and complex, making them difficult to understand. Consider breaking them down into smaller, more manageable functions.",
-        "There are some redundant checks and conditions that can be simplified or removed.",
-        "Consider adding more type annotations and interfaces to improve code readability and maintainability."
+        "Some of the functions and variables could be extracted into separate modules to improve code organization and reusability.",
+        "The use of magic numbers (e.g., 300 in the debounce function) could be replaced with named constants for better readability.",
+        "The code could benefit from more comprehensive error handling and edge case testing."
       ],
       "readability": 85,
-      "maintainability": 80,
-      "overall": "The code is well-structured and well-implemented, but there are some areas for improvement to make it more maintainable and efficient. With some refactoring and simplification, the code can be even more effective and easier to understand."
+      "maintainability": 90,
+      "overall": "The code is well-written and demonstrates a good understanding of React and TypeScript. However, there are some areas for improvement to make the code more maintainable and efficient."
     }
   },
   {

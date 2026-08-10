@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-08-10T13:57:05.488Z",
+  "lastUpdated": "2026-08-10T14:19:12.667Z",
   "totalChallenges": 23,
-  "completedChallenges": 21,
-  "averageScore": 87.9,
-  "completionPercentage": 91.3,
+  "completedChallenges": 20,
+  "averageScore": 85.9,
+  "completionPercentage": 87,
   "badgeLevel": "silver",
   "challengeResults": [
     {
@@ -131,8 +131,8 @@
     {
       "challengeId": "21-react-router",
       "challengeName": "React Router - Routing and Navigation",
-      "score": 89.95,
-      "passed": true
+      "score": 45.69499999999999,
+      "passed": false
     },
     {
       "challengeId": "22-data-fetching",
@@ -161,10 +161,10 @@
     "Custom Hook - useLocalStorage",
     "useReducer - Complex State Management",
     "Performance Optimization",
-    "Error Boundaries and Error Handling",
-    "React Router - Routing and Navigation"
+    "Error Boundaries and Error Handling"
   ],
   "improvementAreas": [
+    "React Router - Routing and Navigation",
     "Data Fetching - Loading and Error State"
   ]
 }
